@@ -1,0 +1,20 @@
+# Logs
+logs
+*.log
+
+# Rintime data
+pids
+*.pid
+*.seed
+
+# Coverage directory used by tools like Istanbul
+coverage
+
+# Grunt storage
+.grunt
+
+# Compiled binary addons
+build/Release
+
+# Dependency directory, lest we want to deploy via this repo (e.g., Heroku)
+node_modules

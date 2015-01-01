@@ -1,0 +1,12 @@
+{
+  "name": "runningman",
+  "version": "0.0.1",
+  "repository": "https//github.com/wheresmybento/runningman",
+  "author": "Kelvin Tay",
+  "main": "web.js",
+  "dependencies": {
+    "edit-google-spreadsheet": "^0.2.13",
+    "express": "^4.10.6",
+    "node-schedule": "^0.1.15"
+  }
+}
