@@ -1,6 +1,12 @@
+<p align="center">
+  <img src="logo.png">
+</p>
+
 # Running Man
 
-Runningman is an application design to run crons on schedule!
+> Cron manager for Benri
+
+Runningman is an application designed to run crons on schedule! 
 Great for building scripts that are supposed to be running in the background.
 
 Technologically, Runningman is built on Node JS, since crons and schedules seem to go well with event-based loops (Node JS). Like cidars and beers.
