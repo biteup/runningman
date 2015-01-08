@@ -20,4 +20,5 @@ Perhaps, some relevant examples would be:
 1. Install [Node](http://nodejs.org/download/) on your machine, if you have not already done so.
 2. Clone this repository onto your machine and `cd` into this project directory.
 3. We need to install all package dependencies. Do so by ```$ npm install```
-4. run the server by ```$ node web.js```
+4. run the server by ```$ node web.js dev``` if you are running Snakebite on your local machine (assuming Snakebite is listening on port 8000)
+5. some default settings are assumed in the config files for various environment. you may wish to fix the config file (e.g., `config/dev.json`) to your own settings whenever necessary. 
