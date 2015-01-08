@@ -1,0 +1,12 @@
+{
+	"spreadsheet": {
+		"spreadsheetId": "1YTOWZZjEsswPr8YdaZzRJBlPH8BJdClJm_TEbRgqkIg",
+		"worksheetId": "od6",
+		"username": "get.benri@gmail.com",
+		"password": "123gobenri!",
+		"debug": false
+	},
+	"api": {
+		"url": "http://getbenri.com:80"
+	}
+}
