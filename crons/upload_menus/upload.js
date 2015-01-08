@@ -99,7 +99,7 @@ var readSpreadsheet = function(){
 					geolocation is expressed as lat, long (as per Google Maps). However we need it to be (long, lat)
 					so that MongoDB does not complain.
 
-					the backend server assumes each menu's images to be in an array, 
+					the backend server assumes each menu's images to be in an array,
 					so we need to reformat the data from spreadsheet.
 					*/
 
@@ -114,7 +114,7 @@ var readSpreadsheet = function(){
 					console.log("No request made for row #" + i + ". Skipping this row.");
 					continue;
 				};
-				req({url: url, headers: {'Content-Type': 'application/json'}, method: method, body: restaurant, json: true}, 
+				req({url: url, headers: {'Content-Type': 'application/json'}, method: method, body: restaurant, json: true},
 					function(err, resp, body){
 						if(err) throw err;
 
