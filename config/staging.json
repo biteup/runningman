@@ -7,6 +7,6 @@
 		"debug": true
 	},
 	"api": {
-		"url": "http://staging.getbenri.com:80"
+		"url": "http://snakebite.herokuapp.com"
 	}
 }

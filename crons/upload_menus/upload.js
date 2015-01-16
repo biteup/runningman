@@ -26,7 +26,10 @@ var readSpreadsheet = function(){
 	function sheetReady(err, spreadsheet){
 
 		function updateSpreadsheet(){
-			_.each(updateMap, function(row){ row[1] = "NOOP"; });  // update status to NOOP for all
+			// update status to NOOP for all
+			for(var key in updateMap){
+				var row = updateMap[key][1] = {name: 'status', val: "NOOP"};
+			};
 			console.log("updates: ", JSON.stringify(updateMap, null, 4));
 			spreadsheet.add(updateMap);
 			spreadsheet.send(function(err){
@@ -103,7 +106,7 @@ var readSpreadsheet = function(){
 					so we need to reformat the data from spreadsheet.
 					*/
 
-					var latlong = _.map(restaurant.geolocation.split(','), function(str){ return parseInt(str, 10); });
+					var latlong = _.map(restaurant.geolocation.split(','), function(str){ return parseFloat(str, 10); });
 					restaurant.geolocation = [latlong[1], latlong[0]];  // mongodb accepts in long lat only
 
 					_.each(restaurant.menus, function(menu){ menu.images = menu.images.split(','); });
@@ -125,7 +128,7 @@ var readSpreadsheet = function(){
 									case 'post': {
 										// update spreadsheet with restaurant ID
 										var id = body['_id']['$oid'];
-										updateMap[i] = {2: id};
+										updateMap[i] = {2: {name: 'ID', val: id}};
 										updateSpreadsheet();
 										break;
 									}
