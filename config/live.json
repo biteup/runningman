@@ -8,5 +8,12 @@
 	},
 	"api": {
 		"url": "http://getbenri.com:80"
+	},
+	"slack": {
+		"token": "xoxb-3578893401-HMjXk7JtiktXOLC3mlBJivFr",
+		"user": "bentobot",
+		"channels": {
+			"general": "C031S83DJ"
+		}
 	}
 }
