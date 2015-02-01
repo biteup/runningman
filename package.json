@@ -9,6 +9,7 @@
     "express": "^4.10.6",
     "node-schedule": "^0.1.15",
     "request": "^2.51.0",
+    "slack-api": "^0.1.11",
     "underscore": "^1.7.0"
   }
 }

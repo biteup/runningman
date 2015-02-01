@@ -162,4 +162,4 @@ var upload = function(){
 	});	
 }
 
-module.exports.upload = upload;  // switch to 'readSpreadsheet' if we want to manually run this script when firing web.js
+module.exports.upload = readSpreadsheet;  // switch to 'readSpreadsheet' if we want to manually run this script when firing web.js
