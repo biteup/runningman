@@ -2,7 +2,9 @@
   <img src="logo.png">
 </p>
 
-# Running Man
+# Running Man 
+[![Build Status](https://travis-ci.org/gobbl/runningman.svg?branch=master)](https://travis-ci.org/gobbl/runningman)
+
 
 > Cron manager for Benri
 
