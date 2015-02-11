@@ -63,9 +63,10 @@ var readSpreadsheet = function(){
 				menuSize;
 
 			for(; i < rows.length; i++){
-				var id = rows[i]["2"];
-				if(!id) rows[i]["2"] = 0;  // fill in temp id value first if new restaurant
+				//var id = rows[i]["2"];
+				//if(!id) rows[i]["2"] = 0;  // fill in temp id value first if new restaurant
 				row = _.values(rows[i]);
+
 				status = row[0].toUpperCase(); // get request status (either NEW, UPDATE or DELETE)
 				menuSize = row[8]; // how many menus this restaurant has / should have
 
@@ -107,7 +108,7 @@ var readSpreadsheet = function(){
 					*/
 
 					var latlong = _.map(restaurant.geolocation.split(','), function(str){ return parseFloat(str, 10); });
-					restaurant.geolocation = [latlong[1], latlong[0]];  // mongodb accepts in long lat only
+					restaurant.geolocation = {'lon': latlong[1], 'lat': latlong[0]};  // mongodb accepts in long lat only
 
 					_.each(restaurant.menus, function(menu){ menu.images = menu.images.split(','); });
 				}
@@ -117,6 +118,7 @@ var readSpreadsheet = function(){
 					console.log("No request made for row #" + i + ". Skipping this row.");
 					continue;
 				};
+
 				req({url: url, headers: {'Content-Type': 'application/json'}, method: method, body: restaurant, json: true},
 					function(err, resp, body){
 						if(err) throw err;
