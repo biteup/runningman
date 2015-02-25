@@ -77,13 +77,15 @@ var readSpreadsheet = function(){
 					restaurant[attrs[k]] = row[k];
 				};
 
+				restaurant['tags'] = restaurant['tags'].split(',');
+
 				// get individual menus' information
 				for(var k = 9; k < (9 + menuSize*4); k+=4){
 					var menu = {};
 					menu[attrs[k]] = row[k]; // name
 					menu[attrs[k+1]] = row[k+1];  // price
 					menu[attrs[k+2]] = row[k+2];  // images
-					menu[attrs[k+3]] = row[k+3];  // tags
+					menu[attrs[k+3]] = row[k+3].split(',');  // tags
 
 					restaurant['menus'].push(menu);
 				};
