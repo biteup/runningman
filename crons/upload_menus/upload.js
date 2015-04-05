@@ -77,8 +77,6 @@ var readSpreadsheet = function(){
 					restaurant[attrs[k]] = row[k];
 				};
 
-				restaurant['tags'] = restaurant['tags'].split(',');
-
 				// get individual menus' information
 				for(var k = 8; k < (8 + menuSize*4); k+=4){
 					var menu = {};
