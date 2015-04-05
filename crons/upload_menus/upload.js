@@ -68,17 +68,17 @@ var readSpreadsheet = function(){
 				row = _.values(rows[i]);
 
 				status = row[0].toUpperCase(); // get request status (either NEW, UPDATE or DELETE)
-				menuSize = row[8]; // how many menus this restaurant has / should have
+				menuSize = row[7]; // how many menus this restaurant has / should have
 
 
 				// TODO: more efficient ways of initializing Restaurant and Menu objects
 				var restaurant = {"menus": []};
-				for(var k = 2; k < 8; k++){
+				for(var k = 2; k < 7; k++){
 					restaurant[attrs[k]] = row[k];
 				};
 
 				// get individual menus' information
-				for(var k = 9; k < (9 + menuSize*4); k+=4){
+				for(var k = 8; k < (8 + menuSize*4); k+=4){
 					var menu = {};
 					menu[attrs[k]] = row[k]; // name
 					menu[attrs[k+1]] = row[k+1];  // price
@@ -119,6 +119,7 @@ var readSpreadsheet = function(){
 					continue;
 				};
 
+				//console.log(restaurant);
 				req({url: url, headers: {'Content-Type': 'application/json'}, method: method, body: restaurant, json: true},
 					function(err, resp, body){
 						if(err) throw err;
@@ -126,6 +127,7 @@ var readSpreadsheet = function(){
 						switch(resp.statusCode){
 							case 200: {
 								console.log('Success: ', body);
+								/*
 								switch(method){
 									case 'post': {
 										// update spreadsheet with restaurant ID
@@ -135,7 +137,7 @@ var readSpreadsheet = function(){
 										break;
 									}
 								};
-
+								*/
 								break;
 							}
 							case 400: {
